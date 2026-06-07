@@ -1,0 +1,360 @@
+#:import KivyMD kivymd
+#:import MDScreenManager kivymd.uix.screenmanager
+#:import MDNavigationLayout kivymd.uix.navigationdrawer
+
+<NavigationDrawerIconButton@MDIconButton>
+    icon: "menu"
+
+<ContentNavigationDrawer@MDNavigationDrawerMenu>:
+    
+    MDNavigationDrawerHeader:
+        title: "Sinais Opções"
+        text: "Análise Técnica B3"
+        spacing: "4dp"
+        padding: "12dp"
+    
+    MDNavigationDrawerItem:
+        text: "Sinais ao Vivo"
+        icon: "chart-line"
+        on_release: 
+            app.root.current = "sinais"
+            nav_drawer.set_state("close")
+    
+    MDNavigationDrawerItem:
+        text: "Criar Estratégia"
+        icon: "plus-circle"
+        on_release: 
+            app.root.current = "criar_estrategia"
+            nav_drawer.set_state("close")
+    
+    MDNavigationDrawerItem:
+        text: "Backtest"
+        icon: "test-tube"
+        on_release: 
+            app.root.current = "backtest"
+            nav_drawer.set_state("close")
+    
+    MDNavigationDrawerItem:
+        text: "Configurações"
+        icon: "cog"
+        on_release: 
+            app.root.current = "config"
+            nav_drawer.set_state("close")
+    
+    MDNavigationDrawerItem:
+        text: "Histórico"
+        icon: "history"
+        on_release: 
+            app.root.current = "historico"
+            nav_drawer.set_state("close")
+
+
+<ScreenSinais@MDScreen>:
+    name: "sinais"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDTopAppBar:
+            title: "Sinais ao Vivo"
+            left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+            right_action_items: [["refresh", lambda x: app.atualizar_sinais()]]
+            md_bg_color: app.theme_cls.primary_color
+        
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: "8dp"
+            
+            MDSwitch:
+                id: switch_auto
+                pos_hint: {"center_x": 0.5}
+                active: True
+                
+            MDLabel:
+                text: "Monitoramento automático: ON"
+                id: lbl_auto_status
+                halign: "center"
+                theme_text_color: "Primary"
+            
+            MDSeparator:
+                height: "1dp"
+            
+            ScrollView:
+                MDList:
+                    id: sinais_list
+                    size_hint_y: None
+                    height: self.minimum_height
+
+
+<ScreenCriarEstrategia@MDScreen>:
+    name: "criar_estrategia"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDTopAppBar:
+            title: "Criar Estratégia"
+            left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+            md_bg_color: app.theme_cls.primary_color
+        
+        ScrollView:
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: "16dp"
+                spacing: "12dp"
+                adaptive_height: True
+                
+                MDLabel:
+                    text: "Nome da Estratégia"
+                    theme_text_color: "Secondary"
+                    font_style: "Caption"
+                
+                MDTextField:
+                    id: estrategia_nome
+                    hint_text: "Ex: Minha Estratégia"
+                
+                MDLabel:
+                    text: "Timeframe"
+                    theme_text_color: "Secondary"
+                    font_style: "Caption"
+                
+                MDSegmentedControl:
+                    id: timeframe_selector
+                    items:
+                        ["D1", "H4", "H1", "M15"]
+                
+                MDLabel:
+                    text: "Fórmula de Entrada"
+                    theme_text_color: "Secondary"
+                    font_style: "Caption"
+                
+                MDSmartTile:
+                    size_hint_y: None
+                    height: "150dp"
+                    MDTextField:
+                        id: formula_entrada
+                        hint_text: "Ex: AC[10] > AC[20] && H[0] == HH[20]"
+                        multiline: True
+                        size_hint_y: None
+                        height: "120dp"
+                
+                MDLabel:
+                    text: "Fórmula de Saída"
+                    theme_text_color: "Secondary"
+                    font_style: "Caption"
+                
+                MDTextField:
+                    id: formula_saida
+                    hint_text: "Ex: resultado >= 1.5 (opcional)"
+                    multiline: False
+                
+                MDLabel:
+                    text: "Gestão de Risco"
+                    theme_text_color: "Secondary"
+                    font_style: "Caption"
+                
+                MDGridRow:
+                    cols: 2
+                    spacing: "8dp"
+                    adaptive_height: True
+                    
+                    MDTextField:
+                        id: risco_input
+                        hint_text: "Risco (%)"
+                        text: "1.0"
+                        input_filter: "float"
+                    
+                    MDTextField:
+                        id: stop_input
+                        hint_text: "Stop (% prêmio)"
+                        text: "50"
+                        input_filter: "float"
+                
+                MDGridRow:
+                    cols: 2
+                    spacing: "8dp"
+                    adaptive_height: True
+                    
+                    MDTextField:
+                        id: parcial_input
+                        hint_text: "Realização Parcial (%)"
+                        text: "100"
+                        input_filter: "float"
+                    
+                    MDTextField:
+                        id: saida_input
+                        hint_text: "Saída Total (%)"
+                        text: "150-200"
+                        input_filter: "float"
+                
+                MDRectangleFlatButton:
+                    text: "VALIDAR FÓRMULA"
+                    pos_hint: {"center_x": 0.5}
+                    on_release: app.validar_formula()
+                
+                MDLabel:
+                    id: resultado_validacao
+                    text: ""
+                    theme_text_color: "Primary"
+                
+                MDFillRoundFlatButton:
+                    text: "SALVAR ESTRATÉGIA"
+                    pos_hint: {"center_x": 0.5}
+                    md_bg_color: app.theme_cls.primary_color
+                    on_release: app.salvar_estrategia()
+
+
+<ScreenBacktest@MDScreen>:
+    name: "backtest"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDTopAppBar:
+            title: "Backtest"
+            left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+            right_action_items: [["play", lambda x: app.executar_backtest()]]
+            md_bg_color: app.theme_cls.primary_color
+        
+        ScrollView:
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: "16dp"
+                spacing: "8dp"
+                adaptive_height: True
+                
+                MDLabel:
+                    text: "Selecione a Estratégia"
+                    theme_text_color: "Secondary"
+                
+                MDDropdownMenu:
+                    id: estrategia_dropdown
+                    items: []
+                
+                MDLabel:
+                    text: "Período do Teste"
+                    theme_text_color: "Secondary"
+                
+                MDGridRow:
+                    cols: 2
+                    spacing: "8dp"
+                    adaptive_height: True
+                    
+                    MDTextField:
+                        id: data_inicio
+                        hint_text: "Data Início (AAAA-MM-DD)"
+                        text: "2024-01-01"
+                    
+                    MDTextField:
+                        id: data_fim
+                        hint_text: "Data Fim (AAAA-MM-DD)"
+                        text: ""
+                
+                MDGridRow:
+                    cols: 2
+                    spacing: "8dp"
+                    adaptive_height: True
+                    
+                    MDTextField:
+                        id: capital_input
+                        hint_text: "Capital (R$)"
+                        text: "10000"
+                        input_filter: "float"
+                    
+                    MDSwitch:
+                        id: usar_estrategia_personalizada
+                        active: False
+                
+                MDRectangleFlatButton:
+                    text: "EXECUTAR BACKTEST"
+                    pos_hint: {"center_x": 0.5}
+                    on_release: app.executar_backtest()
+                
+                MDSeparator:
+                    height: "1dp"
+                
+                MDLabel:
+                    text: "RESULTADOS"
+                    theme_text_color: "Primary"
+                    font_style: "H6"
+                
+                MDLabel:
+                    id: resultados_backtest
+                    text: "Clique em 'Executar Backtest' para iniciar"
+                    theme_text_color: "Secondary"
+
+
+<ScreenConfig@MDScreen>:
+    name: "config"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDTopAppBar:
+            title: "Configurações"
+            left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+            right_action_items: [["content-save", lambda x: app.salvar_config()]]
+            md_bg_color: app.theme_cls.primary_color
+        
+        ScrollView:
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: "16dp"
+                spacing: "12dp"
+                adaptive_height: True
+                
+                MDLabel:
+                    text: "Ativos para Monitorar"
+                    theme_text_color: "Secondary"
+                
+                MDTextField:
+                    id: tickers_input
+                    hint_text: "PETR4.SA, VALE3.SA, ITUB4.SA..."
+                    multiline: True
+                    size_hint_y: None
+                    height: "80dp"
+                
+                MDLabel:
+                    text: "Notificações"
+                    theme_text_color: "Secondary"
+                
+                MDSwitch:
+                    id: notificacoes_switch
+                    active: True
+                
+                MDLabel:
+                    text: "Intervalo de verificação"
+                    theme_text_color: "Secondary"
+                
+                MDSegmentedControl:
+                    id: intervalo_selector
+                    items:
+                        ["5 min", "15 min", "30 min", "1 hora"]
+                
+                MDLabel:
+                    text: "Lista Padrão de Ativos (50 ativos B3)"
+                    theme_text_color: "Secondary"
+                
+                MDRectangleFlatButton:
+                    text: "CARREGAR LISTA PADRÃO"
+                    pos_hint: {"center_x": 0.5}
+                    on_release: app.carregar_tickers_padrao()
+
+
+<ScreenHistorico@MDScreen>:
+    name: "historico"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDTopAppBar:
+            title: "Histórico de Sinais"
+            left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+            right_action_items: [["delete", lambda x: app.limpar_historico()]]
+            md_bg_color: app.theme_cls.primary_color
+        
+        ScrollView:
+            MDList:
+                id: historico_list
+                size_hint_y: None
+                height: self.minimum_height

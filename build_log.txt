@@ -1,0 +1,79 @@
+[91m[1mBuildozer is running as root![0m
+[91mThis is [1mnot[0m [91mrecommended, and may lead to problems later.[0m
+Are you sure you want to continue [y/n]? Cloning into 'python-for-android'...
+Updating files:  10% (63/604)Updating files:  11% (67/604)Updating files:  12% (73/604)Updating files:  13% (79/604)Updating files:  14% (85/604)Updating files:  15% (91/604)Updating files:  16% (97/604)Updating files:  16% (98/604)Updating files:  17% (103/604)Updating files:  18% (109/604)Updating files:  19% (115/604)Updating files:  20% (121/604)Updating files:  20% (124/604)Updating files:  21% (127/604)Updating files:  22% (133/604)Updating files:  23% (139/604)Updating files:  24% (145/604)Updating files:  24% (150/604)Updating files:  25% (151/604)Updating files:  26% (158/604)Updating files:  27% (164/604)Updating files:  28% (170/604)Updating files:  28% (171/604)Updating files:  29% (176/604)Updating files:  29% (181/604)Updating files:  30% (182/604)Updating files:  31% (188/604)Updating files:  31% (189/604)Updating files:  32% (194/604)Updating files:  33% (200/604)Updating files:  34% (206/604)Updating files:  35% (212/604)Updating files:  36% (218/604)Updating files:  37% (224/604)Updating files:  38% (230/604)Updating files:  39% (236/604)Updating files:  40% (242/604)Updating files:  41% (248/604)Updating files:  42% (254/604)Updating files:  42% (255/604)Updating files:  43% (260/604)Updating files:  44% (266/604)Updating files:  45% (272/604)Updating files:  46% (278/604)Updating files:  47% (284/604)Updating files:  48% (290/604)Updating files:  49% (296/604)Updating files:  50% (302/604)Updating files:  51% (309/604)Updating files:  52% (315/604)Updating files:  53% (321/604)Updating files:  53% (322/604)Updating files:  54% (327/604)Updating files:  55% (333/604)Updating files:  56% (339/604)Updating files:  57% (345/604)Updating files:  58% (351/604)Updating files:  59% (357/604)Updating files:  60% (363/604)Updating files:  61% (369/604)Updating files:  61% (371/604)Updating files:  62% (375/604)Updating files:  63% (381/604)Updating files:  64% (387/604)Updating files:  65% (393/604)Updating files:  66% (399/604)Updating files:  67% (405/604)Updating files:  68% (411/604)Updating files:  68% (413/604)Updating files:  69% (417/604)Updating files:  70% (423/604)Updating files:  71% (429/604)Updating files:  72% (435/604)Updating files:  73% (441/604)Updating files:  74% (447/604)Updating files:  75% (453/604)Updating files:  76% (460/604)Updating files:  77% (466/604)Updating files:  78% (472/604)Updating files:  79% (478/604)Updating files:  80% (484/604)Updating files:  81% (490/604)Updating files:  81% (493/604)Updating files:  82% (496/604)Updating files:  83% (502/604)Updating files:  84% (508/604)Updating files:  85% (514/604)Updating files:  86% (520/604)Updating files:  87% (526/604)Updating files:  88% (532/604)Updating files:  89% (538/604)Updating files:  90% (544/604)Updating files:  91% (550/604)Updating files:  92% (556/604)Updating files:  92% (559/604)Updating files:  93% (562/604)Updating files:  94% (568/604)Updating files:  95% (574/604)Updating files:  96% (580/604)Updating files:  97% (586/604)Updating files:  98% (592/604)Updating files:  99% (598/604)Updating files: 100% (604/604)Updating files: 100% (604/604), done.
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+    
+    If you wish to install a non-Debian-packaged Python package,
+    create a virtual environment using python3 -m venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+    sure you have python3-full installed.
+    
+    If you wish to install a non-Debian packaged Python application,
+    it may be easiest to use pipx install xyz, which will manage a
+    virtual environment for you. Make sure you have pipx installed.
+    
+    See /usr/share/doc/python3.14/README.venv for more information.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+[0m[1;31m# WARNING: Config token app android.sdk is deprecated and ignored, but you set value 33[0m
+[0m[1;34m# Ensure build layout[0m
+[0m[1;34m# Check configuration tokens[0m
+[0m[1;34m# Preparing build[0m
+[0m[1;34m# Check requirements for android[0m
+[0m[1;30m# Search for Git (git)[0m
+[0m[1;30m#  -> found at /usr/bin/git[0m
+[0m[1;30m# Search for Cython (cython)[0m
+[0m[1;30m#  -> found at /root/.local/bin/cython[0m
+[0m[1;30m# Search for Java compiler (javac)[0m
+[0m[1;30m#  -> found at /usr/bin/javac[0m
+[0m[1;30m# Search for Java keytool (keytool)[0m
+[0m[1;30m#  -> found at /usr/bin/keytool[0m
+[0m[1;34m# Install platform[0m
+[0m[1;30m# Run 'git clone -b master --single-branch https://github.com/kivy/python-for-android.git python-for-android' ...[0m
+[0m[1;30m# Cwd /mnt/c/Users/Usuário/sinais-opcoes/.buildozer/android/platform[0m
+[0m[1;30m# Run '/usr/bin/python3 -m pip install -q --user appdirs colorama>=0.3.3 jinja2 sh>=2, <3.0; sys_platform!="win32" meson ninja build toml packaging setuptools wheel~=0.43.0' ...[0m
+[0m[1;30m# Cwd None[0m
+[0m[1;31m# Command failed: ('/usr/bin/python3', '-m', 'pip', 'install', '-q', '--user', 'appdirs', 'colorama>=0.3.3', 'jinja2', 'sh>=2, <3.0; sys_platform!="win32"', 'meson', 'ninja', 'build', 'toml', 'packaging', 'setuptools', 'wheel~=0.43.0')[0m
+[0m[1;31m# Error code: 1[0m
+[0m[1;31m# ENVIRONMENT:[0m
+[0m[1;31m#     SHELL = '/bin/bash'[0m
+[0m[1;31m#     WSL2_GUI_APPS_ENABLED = '1'[0m
+[0m[1;31m#     WSL_DISTRO_NAME = 'Ubuntu'[0m
+[0m[1;31m#     NAME = 'DESKTOP-KBENTES'[0m
+[0m[1;31m#     PWD = '/mnt/c/Users/Usuário/sinais-opcoes'[0m
+[0m[1;31m#     LOGNAME = 'root'[0m
+[0m[1;31m#     HOME = '/root'[0m
+[0m[1;31m#     LANG = 'C.UTF-8'[0m
+[0m[1;31m#     WSL_INTEROP = '/run/WSL/312_interop'[0m
+[0m[1;31m#     WAYLAND_DISPLAY = 'wayland-0'[0m
+[0m[1;31m#     TERM = 'xterm-256color'[0m
+[0m[1;31m#     USER = 'root'[0m
+[0m[1;31m#     DISPLAY = ':0'[0m
+[0m[1;31m#     SHLVL = '1'[0m
+[0m[1;31m#     XDG_RUNTIME_DIR = '/run/user/0'[0m
+[0m[1;31m#     WSLENV = ''[0m
+[0m[1;31m#     PATH = ('/root/.buildozer/android/platform/apache-ant-1.9.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program '
+ 'Files (x86)/Common '
+ 'Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program '
+ 'Files (x86)/dotnet/:/mnt/c/Program '
+ 'Files/Git/cmd:/mnt/c/Users/Usuário/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Usuário/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Usuário/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Usuário/AppData/Local/Programs/Microsoft '
+ 'VS '
+ 'Code/bin:/mnt/c/Users/Usuário/.lmstudio/bin:/root/.local/bin:/usr/lib/jvm/java-17-openjdk-amd64/bin')[0m
+[0m[1;31m#     DBUS_SESSION_BUS_ADDRESS = 'unix:path=/run/user/0/bus'[0m
+[0m[1;31m#     HOSTTYPE = 'x86_64'[0m
+[0m[1;31m#     PULSE_SERVER = 'unix:/mnt/wslg/PulseServer'[0m
+[0m[1;31m#     OLDPWD = '/mnt/c/Users/Usuário'[0m
+[0m[1;31m#     _ = '/root/.local/bin/buildozer'[0m
+[0m[1;31m# [0m
+[0m[1;31m# Buildozer failed to execute the last command[0m
+[0m[1;31m# The error might be hidden in the log above this error[0m
+[0m[1;31m# Please read the full log, and search for it before[0m
+[0m[1;31m# raising an issue with buildozer itself.[0m
+[0m[1;31m# In case of a bug report, please add a full log with log_level = 2[0m

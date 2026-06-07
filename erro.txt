@@ -1,0 +1,3 @@
+Buildozer is running as root!
+This is not recommended, and may lead to problems later.
+Are you sure you want to continue [y/n]? Are you sure you want to continue [y/n]? 

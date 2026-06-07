@@ -1,0 +1,94 @@
+[91m[1mBuildozer is running as root![0m
+[91mThis is [1mnot[0m [91mrecommended, and may lead to problems later.[0m
+Are you sure you want to continue [y/n]? [0m[1;31m# WARNING: Config token app android.sdk is deprecated and ignored, but you set value 33[0m
+[0m[1;34m# Ensure build layout[0m
+[0m[1;34m# Check configuration tokens[0m
+[0m[1;34m# Preparing build[0m
+[0m[1;34m# Check requirements for android[0m
+[0m[1;30m# Search for Git (git)[0m
+[0m[1;30m#  -> found at /usr/bin/git[0m
+[0m[1;30m# Search for Cython (cython)[0m
+[0m[1;30m#  -> found at /root/venv_build/bin/cython[0m
+[0m[1;30m# Search for Java compiler (javac)[0m
+[0m[1;30m#  -> found at /usr/bin/javac[0m
+[0m[1;30m# Search for Java keytool (keytool)[0m
+[0m[1;30m#  -> found at /usr/bin/keytool[0m
+[0m[1;34m# Install platform[0m
+[0m[1;30m# Run 'git config --get remote.origin.url' ...[0m
+[0m[1;30m# Cwd /mnt/c/Users/Usuário/sinais-opcoes/.buildozer/android/platform/python-for-android[0m
+https://github.com/kivy/python-for-android.git
+[0m[1;30m# Run 'git branch -vv' ...[0m
+[0m[1;30m# Cwd /mnt/c/Users/Usuário/sinais-opcoes/.buildozer/android/platform/python-for-android[0m
+* master 58d21141 [origin/master] Merge pull request #3321 from kivy/release-2026.05.09
+[0m[1;30m# Run '/root/venv_build/bin/python3 -m pip install -q appdirs colorama>=0.3.3 jinja2 sh>=2, <3.0; sys_platform!="win32" meson ninja build toml packaging setuptools wheel~=0.43.0' ...[0m
+[0m[1;30m# Cwd None[0m
+[0m[1;34m# Android ANT is missing, downloading[0m
+[0m[1;30m# Downloading https://archive.apache.org/dist/ant/binaries/apache-ant-1.9.4-bin.tar.gz[0m
+- Download 18.84%- Download 37.69%- Download 56.53%- Download 75.37%- Download 94.22%- Download 100.00%[0m[1;30m# Extracting apache-ant-1.9.4-bin.tar.gz to /root/.buildozer/android/platform/apache-ant-1.9.4[0m
+[0m[1;34m# Apache ANT installation done.[0m
+[0m[1;34m# Android SDK is missing, downloading[0m
+[0m[1;30m# Downloading https://dl.google.com/android/repository/commandlinetools-linux-6514223_latest.zip[0m
+- Download 1.21%- Download 2.42%- Download 3.64%- Download 4.85%- Download 6.06%- Download 7.27%- Download 8.48%- Download 9.70%- Download 10.91%- Download 12.12%- Download 13.33%- Download 14.54%- Download 15.75%- Download 16.97%- Download 18.18%- Download 19.39%- Download 20.60%- Download 21.81%- Download 23.03%- Download 24.24%- Download 25.45%- Download 26.66%- Download 27.87%- Download 29.09%- Download 30.30%- Download 31.51%- Download 32.72%- Download 33.93%- Download 35.15%- Download 36.36%- Download 37.57%- Download 38.78%- Download 39.99%- Download 41.21%- Download 42.42%- Download 43.63%- Download 44.84%- Download 46.05%- Download 47.26%- Download 48.48%- Download 49.69%- Download 50.90%- Download 52.11%- Download 53.32%- Download 54.54%- Download 55.75%- Download 56.96%- Download 58.17%- Download 59.38%- Download 60.60%- Download 61.81%- Download 63.02%- Download 64.23%- Download 65.44%- Download 66.66%- Download 67.87%- Download 69.08%- Download 70.29%- Download 71.50%- Download 72.72%- Download 73.93%- Download 75.14%- Download 76.35%- Download 77.56%- Download 78.77%- Download 79.99%- Download 81.20%- Download 82.41%- Download 83.62%- Download 84.83%- Download 86.05%- Download 87.26%- Download 88.47%- Download 89.68%- Download 90.89%- Download 92.11%- Download 93.32%- Download 94.53%- Download 95.74%- Download 96.95%- Download 98.17%- Download 99.38%- Download 100.00%[0m[1;34m# Unpacking Android SDK[0m
+[0m[1;30m# Extracting commandlinetools-linux-6514223_latest.zip to /root/.buildozer/android/platform/android-sdk[0m
+[0m[1;30m# Run 'unzip -q /root/.buildozer/android/platform/android-sdk/commandlinetools-linux-6514223_latest.zip' ...[0m
+[0m[1;30m# Cwd /root/.buildozer/android/platform/android-sdk[0m
+Traceback (most recent call last):
+  File "/root/venv_build/bin/buildozer", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/root/venv_build/lib/python3.14/site-packages/buildozer/scripts/client.py", line 16, in main
+    Buildozer().run_command(sys.argv[1:])
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/root/venv_build/lib/python3.14/site-packages/buildozer/__init__.py", line 684, in run_command
+    self.target.run_commands(args)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/root/venv_build/lib/python3.14/site-packages/buildozer/target.py", line 96, in run_commands
+    func(args)
+    ~~~~^^^^^^
+  File "/root/venv_build/lib/python3.14/site-packages/buildozer/targets/android.py", line 1015, in cmd_debug
+    super().cmd_debug(*args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/root/venv_build/lib/python3.14/site-packages/buildozer/target.py", line 106, in cmd_debug
+    self.buildozer.prepare_for_build()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/root/venv_build/lib/python3.14/site-packages/buildozer/__init__.py", line 91, in prepare_for_build
+    self.target.install_platform()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/root/venv_build/lib/python3.14/site-packages/buildozer/targets/android.py", line 654, in install_platform
+    self._install_android_sdk()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/root/venv_build/lib/python3.14/site-packages/buildozer/targets/android.py", line 414, in _install_android_sdk
+    buildops.file_extract(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        archive,
+        ^^^^^^^^
+        cwd=sdk_dir,
+        ^^^^^^^^^^^^
+        env=self.buildozer.environ)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/venv_build/lib/python3.14/site-packages/buildozer/buildops.py", line 142, in file_extract
+    return_code = cmd(
+                  ~~~^
+        ["unzip", "-q", join(cwd, archive)], cwd=cwd, env=env
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).return_code
+    ^
+  File "/root/venv_build/lib/python3.14/site-packages/buildozer/buildops.py", line 300, in cmd
+    process = Popen(
+        command,
+    ...<4 lines>...
+        cwd=cwd,
+    )
+  File "/usr/lib/python3.14/subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 1990, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'unzip'
