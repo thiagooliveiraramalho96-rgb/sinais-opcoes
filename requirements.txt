@@ -4,7 +4,6 @@ kivymd>=1.1.1
 pandas>=2.0.0
 numpy>=1.24.0
 yfinance>=0.2.0
-pandas_ta
 matplotlib>=3.7.0
 plyer>=2.1.0
 schedule>=1.2.0
